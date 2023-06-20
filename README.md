@@ -1,5 +1,5 @@
 # Reproductor-multiformato
-### Aclaracion importante
+## Aclaracion importante
 El código aún se encuentra sujeto a cambios
 Pedimos porfavor que, para mantener la sorpresa en la presentacion, aún no lo prueben
 ## Guia de uso
