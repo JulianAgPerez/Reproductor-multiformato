@@ -1,6 +1,6 @@
 # Reproductor-multiformato
 ## Aclaracion importante
-El código aún se encuentra sujeto a cambios
+El código aún se encuentra sujeto a cambios.
 Pedimos porfavor que, para mantener la sorpresa en la presentacion, aún no lo prueben
 ## Guia de uso
 1. Para agregar canciones debe descargar la cancion en formato .mmp3, .mid y .wav. 
