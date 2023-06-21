@@ -8,17 +8,14 @@ import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;
 import java.util.HashSet;
-//Bibliotecasde reproduccion
+//Bibliotecas de reproduccion
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javazoom.jl.player.Player;
 import javax.sound.midi.*;
-
-import javax.sound.sampled.*;
-
+import javazoom.jl.decoder.JavaLayerException;
 //Biblioteca para el tiempo en lo estetico
 import javax.swing.Timer;
-import javazoom.jl.decoder.JavaLayerException;
 
 public class view extends javax.swing.JFrame {
 
@@ -59,7 +56,7 @@ public class view extends javax.swing.JFrame {
                     String nombreArchivo = archivo.getName();
                     String nombreSinExtension = nombreArchivo.substring(0, nombreArchivo.lastIndexOf('.'));
 
-                    if (archivo.getName().endsWith(".mp3") || archivo.getName().endsWith(".midi") || archivo.getName().endsWith(".wav") || archivo.getName().endsWith(".flac")) {
+                    if (archivo.getName().endsWith(".mp3") || archivo.getName().endsWith(".mid") || archivo.getName().endsWith(".wav") ) {
                         if (!nombresCanciones.contains(nombreSinExtension)) {
                             nombresCanciones.add(nombreSinExtension);
                             comboBoxCanciones.addItem(nombreSinExtension);
@@ -147,12 +144,7 @@ public class view extends javax.swing.JFrame {
                     e.printStackTrace();
                 }
             }
-
-            case "flac" -> {
-
-            }
         }
-
     }
 
     //metodos de control de la musica
@@ -269,7 +261,7 @@ public class view extends javax.swing.JFrame {
             }
         });
 
-        comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MP3", "WAV", "MID", "FLAC" }));
+        comboBoxTipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "MP3", "WAV", "MID" }));
 
         comboBoxCanciones.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
@@ -361,7 +353,7 @@ public class view extends javax.swing.JFrame {
         if (!enPausa) {
             ///canciones
             String cancion = comboBoxCanciones.getSelectedItem().toString() + "." + comboBoxTipo.getSelectedItem().toString().toLowerCase();
-            System.out.println("aeaea " + comboBoxCanciones.getSelectedItem().toString() + "." + comboBoxTipo.getSelectedItem().toString().toLowerCase());
+            System.out.println("Cancion sonando --> " + comboBoxCanciones.getSelectedItem().toString() + "." + comboBoxTipo.getSelectedItem().toString().toLowerCase());
             reproducir(cancion);
         } else {
             reanudar();
